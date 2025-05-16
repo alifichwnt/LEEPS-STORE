@@ -1,0 +1,110 @@
+[
+  {
+    "id": 1,
+    "name": " Wastafel 1 Bak",
+    "price": 445,
+    "image": "css/image/wastafel.png"
+  },
+  {
+    "id": 2,
+    "name": " Sealant Dextone",
+    "price": 52.5,
+    "image": "css/image/dextone.png"
+  },
+  {
+    "id": 3,
+    "name": " Pasir Beton",
+    "price": 256,
+    "image": "css/image/pasirbeton.jpeg"
+  },
+  {
+    "id": 4,
+    "name": " Paku Biasa",
+    "price": 23.5,
+    "image": "css/image/pakubiasa.jpeg"
+  },
+  {
+    "id": 5,
+    "name": " Paku Skrup 5cm",
+    "price": 39,
+    "image": "css/image/pakuskrup.jpeg"
+  },
+  {
+    "id": 6,
+    "name": " Pipa PVC 2 inch ",
+    "price": 30.7,
+    "image": "css/image/pipapvc2.jpeg"
+  },
+  {
+    "id": 7,
+    "name": " Ubin (Tegel Biasa) Polos",
+    "price": 10,
+    "image": "css/image/ubinpolos.jpeg"
+  },
+  {
+    "id": 8,
+    "name": " Thinner",
+    "price": 38.5,
+    "image": "css/image/thinner.jpeg"
+  },
+  {
+    "id":20,
+    "name": " Fall Protection",
+    "price": 635,
+    "image": "css/image/fallsafety.jpeg"
+  },
+  {
+    "id": 21,
+    "name": " Helm Safety",
+    "price": 57.5,
+    "image": "css/image/helmsafety.jpeg"
+  },
+  {
+    "id": 22,
+    "name": " PPE Face Protection",
+    "price": 1450,
+    "image": "css/image/faceshield.jpeg"
+  },
+  {
+    "id": 23,
+    "name": " Wearpack Safety",
+    "price": 140,
+    "image": "css/image/wearpack.jpeg"
+  },
+  {
+    "id": 24,
+    "name": " Safety Boot",
+    "price": 170,
+    "image": "css/image/safetyboot.jpeg"
+  },
+  {
+    "id": 25,
+    "name": " Gloves",
+    "price": 31.5,
+    "image": "css/image/gloves.jpeg"
+  },
+  {
+    "id": 26,
+    "name": " Traffic Cone Rubber",
+    "price": 175,
+    "image": "css/image/trafficCone.jpeg"
+  },
+  {
+    "id": 42,
+    "name": " Excavator",
+    "price": 375,
+    "image": "css/image/excavator.jpeg"
+  },
+  {
+    "id": 43,
+    "name": " Dump Truck",
+    "price": 336,
+    "image": "css/image/dumptruck.jpeg"
+  },
+  {
+    "id": 44,
+    "name": " Buldozer",
+    "price": 505,
+    "image": "css/image/buldozer.jpeg"
+  }
+]
