@@ -1,0 +1,754 @@
+/* Animasi */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.fadeIn {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.slideIn {
+  animation: slideIn 1s ease-out forwards;
+}
+
+.zoomIn {
+  animation: zoomIn 1s ease-out forwards;
+}
+
+/*Awal tampilan web*/
+:root {
+  --primary: rgba(146, 131, 48, 0.89);
+  --bg: rgba(206, 177, 120, 0.925);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background-image: url("image/background-body.jpg");
+  color: var(--primary);
+  /*min-height: 5000px;*/
+}
+
+/*navbar*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.4rem 7%;
+  background-color: rgba(1, 1, 1, 0.8);
+  border-bottom: 1px solid rgb(202, 159, 102);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.navbar .navbar-logo {
+  font-size: 3rem;
+  font-weight: 1000;
+  color: rgb(236, 225, 195);
+  font-style: oblique;
+}
+
+.navbar .navbar-logo span {
+  color: var(--primary);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1.3rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  display: flexbox;
+  color: darkslategray;
+  background-color: var(--bg);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.navbar .navbar-extra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-extra a:hover {
+  color: var(--primary);
+}
+
+#hamburger-menu {
+  display: none;
+}
+
+#user-profile {
+  display: inline-block;
+}
+
+/* Navbar search form */
+.navbar .search-form {
+  position: absolute;
+  top: 100%;
+  right: 7%;
+  background-color: #ffffff;
+  width: 30rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  transform: scaleY(0);
+  transform-origin: top;
+  transition: 0.5s;
+}
+
+.navbar .search-form.active {
+  transform: scaleY(1);
+}
+
+.navbar .search-form input {
+  height: 100%;
+  width: 100%;
+  font-size: 1.6rem;
+  color: black;
+  padding: 1rem;
+}
+
+.navbar .search-form label {
+  cursor: pointer;
+  font-size: 2rem;
+  margin-right: 1.5rem;
+  color: black;
+}
+
+/* Styling untuk saran nama produk */
+#suggestion-box {
+  position: absolute;
+  top: 40px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.suggestion-item {
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #ccc;
+}
+
+.suggestion-item:last-child {
+  border-bottom: none;
+}
+
+.suggestion-item:hover {
+  background-color: #f0f0f0;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 110vh;
+  display: flex;
+  position: relative;
+  justify-content: center; /* Mengatur jarak di antara konten dan slider */
+  align-items: center; /* vertical content */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(10, 6, 6, 0.212),
+      rgba(150, 82, 37, 0.527) 150%
+    ),
+    url("image/header-bg-update.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-out forwards;
+}
+
+.hero::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  bottom: 0;
+}
+
+.hero .content {
+  text-align: justify;
+  margin-left: 5rem; /* Margin kanan untuk membuat ruang di antara konten dan slider */
+  padding: 1.6rem 7.5%;
+  max-width: 35rem;
+  background-color: rgb(236, 138, 58);
+  border-radius: 5rem;
+  border-style: hidden;
+}
+
+.hero .content:hover {
+  background-color: rgba(236, 138, 58, 0.616);
+}
+
+.hero .content h1 {
+  margin-left: -1rem;
+  text-align: center;
+  font-size: 4rem;
+  color: rgba(240, 231, 231, 0.87);
+  text-shadow: 2px 1px 3px rgba(1, 1, 3, 0.5);
+  line-height: 1.2;
+}
+
+.hero .content h1 span {
+  color: darkred;
+}
+
+/*BUTTON HERO ANIMATED START*/
+.hero .content .beautiful-button {
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  /* Latar belakang gradasi */
+  color: white;
+  /* Warna teks putih */
+  font-family: "Segoe UI", sans-serif;
+  /* Font yang bergaya dan mudah dibaca */
+  font-weight: bold;
+  font-size: 18px;
+  /* Ukuran font besar */
+  border: none;
+  /* Tanpa border */
+  border-radius: 30px;
+  /* Sudut melengkung */
+  padding: 14px 28px;
+  /* Padding besar */
+  cursor: pointer;
+  /* Kursor saat hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Bayangan halus */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+  /* Transisi halus */
+}
+
+/* Animasi saat hover */
+.hero .content .beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Animasi saat klik */
+.hero .content .beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi shimmer */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Animasi partikel */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+/*BUTTON HERO ANIMATED END*/
+
+/*about section*/
+/*about, catalog, contact joint section start*/
+.about,
+.catalog,
+.contact {
+  padding: 10rem 7% 1.4rem;
+}
+.about h2,
+.catalog h2,
+.contact h2 {
+  text-align: center;
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  color: whitesmoke;
+  text-shadow: 4px 3px 2px rgba(1, 1, 3, 0.5);
+}
+
+.about h2 span,
+.catalog h2 span,
+.contact h2 span {
+  border-radius: 20px;
+  padding: 0.8rem;
+  background-color: rgba(0, 0, 0, 0.671);
+  font-size: 5rem;
+  color: rgb(236, 138, 58);
+  text-shadow: 3px 3px 3px rgba(1, 1, 3, 0.5);
+}
+/*about, catalog, contact joint section end*/
+
+.about .row {
+  display: flex;
+}
+
+.about .row .about-img {
+  flex: 1 1 45rem;
+}
+
+.about .row .about-img img {
+  width: 100%;
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+.about .row .content {
+  flex: 1 1 35rem;
+  padding: 0 1rem;
+  color: rgba(255, 215, 189, 0.815);
+}
+
+.about .row .content h3 {
+  color: rgb(255, 255, 255);
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-shadow: 4px 3px 3px rgb(17, 15, 15);
+  text-align: center;
+  border-radius: 20px;
+}
+
+.about .row .content p {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-bottom: 0.8rem;
+  font-size: 1.6rem;
+  text-shadow: 4px 3px 3px rgb(17, 15, 15);
+  line-height: 1.6;
+  font-weight: 500;
+  background-color: rgba(71, 59, 59, 0.514);
+}
+
+/*catalog section*/
+.catalog {
+  background-image: url("image/catalog.jpg");
+  margin-bottom: 7rem;
+}
+
+.catalog h2,
+.contact h2 {
+  margin-bottom: 1.2rem;
+}
+
+.catalog p,
+.contact p {
+  font-size: 2rem;
+  font-style: oblique;
+  font-weight: 1000;
+  line-height: 1.6;
+  color: rgba(44, 34, 29, 0.74);
+  text-shadow: 4px 7px 4px rgba(124, 120, 120, 0.671);
+  text-align: center;
+  max-width: 38rem;
+  margin: auto;
+}
+
+.catalog .row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 5rem;
+  justify-content: center;
+}
+
+.catalog .row .catalog-card {
+  text-align: center;
+  padding-bottom: 4rem;
+  opacity: 0;
+  animation: zoomIn 1s ease-out forwards;
+}
+
+.catalog .row .catalog-card img {
+  border-radius: 100%;
+  width: 40%;
+}
+
+.catalog .row .catalog-card .catalog-card-title {
+  font-size: 3rem;
+  color: rgb(0, 12, 39);
+  text-shadow: 5px 8px 10px rgba(73, 73, 73, 0.596);
+  margin: 1rem auto 0.5rem;
+}
+
+.catalog .row .catalog-card .catalog-card-desc1 {
+  position: relative;
+  display: inline-flex;
+  color: #ffffffea;
+  background-color: rgba(0, 0, 0, 0.781);
+  text-shadow: 8px 4px 3px rgba(124, 120, 120, 0.671);
+  font-weight: 100;
+  text-align: justify;
+  padding: 1rem;
+  margin-left: 5%;
+  margin-right: 0%;
+}
+.catalog .row .catalog-card .catalog-card-desc2 {
+  position: relative;
+  display: inline-flex;
+  color: #ffffffea;
+  background-color: rgba(0, 0, 0, 0.781);
+  text-shadow: 8px 4px 3px rgba(124, 120, 120, 0.671);
+  font-weight: 100;
+  text-align: justify;
+  padding: 1rem;
+  margin-left: 5%;
+}
+.catalog .row .catalog-card .catalog-card-desc3 {
+  position: relative;
+  display: inline-flex;
+  color: #ffffffea;
+  background-color: rgba(0, 0, 0, 0.781);
+  text-shadow: 8px 4px 3px rgba(124, 120, 120, 0.671);
+  font-weight: 100;
+  text-align: justify;
+  padding: 1rem;
+  margin-left: 5%;
+}
+
+/*BUTTON CATALOG ANIMATED START*/
+.catalog .row .catalog-card .beautiful-button {
+  margin-left: 10px;
+  position: relative;
+  display: inline-block;
+  background: linear-gradient(to bottom, #1b1c3f, #4a4e91);
+  /* Latar belakang gradasi */
+  color: white;
+  /* Warna teks putih */
+  font-family: "Segoe UI", sans-serif;
+  /* Font yang bergaya dan mudah dibaca */
+  font-weight: bold;
+  font-size: 18px;
+  /* Ukuran font besar */
+  border: none;
+  /* Tanpa border */
+  border-radius: 30px;
+  /* Sudut melengkung */
+  padding: 14px 28px;
+  /* Padding besar */
+  cursor: pointer;
+  /* Kursor saat hover */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  /* Bayangan halus */
+  animation: button-shimmer 2s infinite;
+  transition: all 0.3s ease-in-out;
+  /* Transisi halus */
+}
+
+/* Animasi saat hover */
+.catalog .row .catalog-card .beautiful-button:hover {
+  background: linear-gradient(to bottom, #2c2f63, #5b67b7);
+  animation: button-particles 1s ease-in-out infinite;
+  transform: translateY(-2px);
+}
+
+/* Animasi saat klik */
+.catalog .row .catalog-card .beautiful-button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animasi shimmer */
+@keyframes button-shimmer {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+
+/* Animasi partikel */
+@keyframes button-particles {
+  0% {
+    background-position: left top;
+  }
+
+  100% {
+    background-position: right bottom;
+  }
+}
+/*BUTTON HERO ANIMATED END*/
+
+/*contact section*/
+.contact h2 {
+  margin-bottom: 5rem;
+}
+.contact .row {
+  display: flex;
+  margin-top: 2rem;
+  background-color: rgb(202, 133, 55);
+}
+
+.contact .row .map {
+  flex: 1 1 45rem;
+  width: 100%;
+  object-fit: cover;
+  opacity: 0;
+  animation: slideIn 1s ease-out forwards;
+}
+
+.contact .row form {
+  flex: 1 1 45rem;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact .row form .info-group {
+  display: flex;
+  align-items: center;
+  margin-top: 2rem;
+  background-color: whitesmoke;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding-left: 2rem;
+}
+
+.contact .row form .info-group span {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.7rem;
+  background: none;
+  text-align: center;
+}
+
+.contact .row form .whatsapp-button {
+  margin-top: 3rem;
+  display: inline-block;
+  padding: 1rem 3rem;
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+
+/*button di section contact*/
+.contact .row form button {
+  padding: 12.5px 30px;
+  border: 0;
+  border-radius: 100px;
+  background-color: #2ba8fb;
+  color: #ffffff;
+  font-weight: Bold;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.contact .row form button:hover {
+  background-color: #6fc5ff;
+  box-shadow: 0 0 20px #6fc5ff50;
+  transform: scale(1.1);
+}
+
+.contact .row form button:active {
+  background-color: #3d94cf;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  box-shadow: none;
+  transform: scale(0.98);
+}
+
+/* Footer*/
+footer {
+  background-color: rgb(17, 9, 1);
+  text-align: center;
+  padding: 0.2rem 0 1rem;
+  margin-top: 3rem;
+  opacity: 0;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+footer .socials {
+  padding: 1rem 0;
+}
+
+footer .socials a {
+  color: #fff;
+  margin: 1rem;
+}
+
+footer .socials a:hover,
+footer .links a:hover {
+  color: blue;
+}
+
+footer .links {
+  font-size: 10px;
+  margin-bottom: 1rem;
+}
+
+footer .links a {
+  color: #fff;
+  padding: 0.7rem 1rem;
+}
+
+footer .credit {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.781);
+  font-size: 0.8rem;
+}
+
+footer .credit p {
+  color: whitesmoke;
+}
+
+footer .credit a {
+  text-transform: uppercase;
+  font-style: italic;
+  color: rgba(39, 39, 128, 0.932);
+}
+
+/* Media Querist */
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 758px) {
+  html {
+    font-size: 62.5%;
+  }
+
+  #hamburger-menu {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: rgba(1, 1, 1, 0.8);
+    width: 30rem;
+    height: 100vh;
+    transition: 0.6s ease-in-out;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+  }
+
+  .navbar .search-form {
+    width: 40%;
+    right: 5rem;
+  }
+
+  .hero .content {
+    margin: auto;
+  }
+
+  .hero .content h1 {
+    font-size: 30px;
+    margin: auto;
+  }
+
+  .hero .content .beautiful-button {
+    padding: 1rem 3rem;
+    margin: 1rem 4rem;
+  }
+
+  .about .row {
+    flex-wrap: wrap;
+  }
+
+  .about .row .about-img {
+    object-fit: cover;
+  }
+
+  .about .row .content {
+    padding: 0;
+  }
+
+  .about .row .content h3 {
+    font-size: 1.9rem;
+  }
+
+  .catalog p {
+    font-size: 1.5rem;
+  }
+
+  .contact .row {
+    flex-wrap: wrap;
+  }
+
+  .contact .row .map {
+    height: 40rem;
+  }
+
+  .contact .row form {
+    padding-top: 0;
+  }
+}
+/* Mobile Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
